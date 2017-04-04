@@ -31,7 +31,7 @@ We'll use `create-react-app` to make our app.
    - App.css
    - App.js // This is where our react code begins
    - App.test.js // This is a test file we can ignore
-   - Index.js // This is where our react app is initially renderd
+   - Index.js // This is where our react app is initially rendered
    - Index.css
 ```
 
@@ -56,7 +56,7 @@ code they add that you don't need.
   * `src/logo.svg`
 * in `App.js`, remove the line `import logo from './logo.svg';`
 
-Now that we have removed unnecessary code, we can start building our first component. 
+Now that we have removed unnecessary code, we can start building our first component.
 Open `App.js`.
 
 
@@ -65,9 +65,9 @@ Open `App.js`.
 ``` jsx
 <div>
     <h1>The <strong>facebook</strong> Friend Machine</h1>
-    
+
     <div className="friends">
-    
+
     </div>
 </div>
 ```
@@ -118,7 +118,7 @@ With our header displaying and our app component ready for some child components
 
 * Let's keep all our next components inside of a directory in `src` called `components`.
 * Make a file called `FriendsList.js` inside of `components`.
-* Set up `FriendsList.js` the same as `App` was; an exported class inheriting from `React.Component` 
+* Set up `FriendsList.js` the same as `App` was; an exported class inheriting from `React.Component`
   with a `render` method that returns the following JSX:
 
 ```
@@ -176,7 +176,7 @@ import React from "react";
 class FriendsList extends React.Component {
 	constructor( props ) {
 	    super( props );
-	    
+
 		this.state = {
 			  searchText: ""
 			, orderBy: "name"
@@ -229,7 +229,7 @@ export default FriendsList;
 
 ```
 
-To test this component we'll need to import it into `App.js` and add the component inside of the div with the class of "friends". 
+To test this component we'll need to import it into `App.js` and add the component inside of the div with the class of "friends".
 None of our values will be editable. This is because they are bound to values on this components state, which can only be changed with `this.setState`
 Let's fix this so we can change theses values.
 
@@ -239,7 +239,7 @@ Let's fix this so we can change theses values.
   * If the field is `"searchText"`, then setState should change `"searchText"` to `event.target.value`.
 * Next we need to add `onChange` properties to our select and input elements, passing in our `handleChange` method.
 	* Don't forget to use `bind` to preserve the context of `this`!
-  * Remember that you can use `bind` to preset an argument for a function. 
+  * Remember that you can use `bind` to preset an argument for a function.
     Use that to set the value of `field`for each `onChange` event handler.
   * Make sure `onChange`'s `field` parameter matches the field on state that you want to change.
 
@@ -346,7 +346,7 @@ Create a new file named `Friend.js` and follow the usual steps for creating a cl
 	* Don't forget that every repeated item in React needs a unique `key`. `friend.$$hashKey` would work well for this.
 	* Be careful of null values!
 * Adjust `Friend.js` to use `this.props` instead of the static data we included in our original JSX.
-	
+
 **Checkpoint:** You should now be displaying a large list of friends. Your code should look something like this:
 
 ``` jsx
@@ -371,7 +371,7 @@ class FriendsList extends React.Component {
 				status={ friend.status ? friend.status.message : "" }
 			/>
 		) );
-        
+
         return (
             // ...
             <ul>
@@ -418,7 +418,7 @@ As the final touch, we need to add sorting and filtering. For this we will use p
 * Using the values we have stored on our FriendList component's state and built in array methods sort, filter, and reverse the array of Friend components as expected.
     * **Warning:** JavaScript's built in `.sort` does not reliably sort in Chrome. Either test in another browser or find a different sorting algorithm.
     * Your code should look something like this:
-    
+
 ``` jsx
 // FriendsList.js
 
@@ -454,15 +454,15 @@ ___
 
 ### Contributions
 
-#### 
- 
+####
+
 If you see a problem or a typo, please fork, make the necessary changes, and create a pull request so we can review your changes and merge them into the master repo and branch.
 
 ## Copyright
 
 ### Copyright
 
-#### 
+####
 
 © DevMountain LLC, 2016. Unauthorized use and/or duplication of this material without express and written permission from DevMountain, LLC is strictly prohibited. Excerpts and links may be used, provided that full and clear credit is given to DevMountain with appropriate and specific direction to the original content.
 

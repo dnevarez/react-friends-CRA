@@ -1,4 +1,4 @@
-export default [
+module.exports = [
   {
     "name": "Preston McNeil",
     "pic_square": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash2/1117694_1614542_108355616_q.jpg",
